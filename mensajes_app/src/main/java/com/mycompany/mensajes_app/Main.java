@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        
+
         Scanner tc = new Scanner(System.in);
         int opcion = 0;
         do {
@@ -20,11 +20,26 @@ public class Main {
             System.out.println("||   4.- Eliminar mensaje  ||");
             System.out.println("||   5.- Salir             ||");
             System.out.println("=============================");
-            opcion++;
+            opcion = tc.nextInt();
+            switch (opcion) {
+                case 1:
+                    MensajesService.crearMensaje();
+                    break;
+                case 2:
+                    MensajesService.listarMensajes();
+                    break;
+                case 3:
+                    MensajesService.editarMensajes();
+                    break;
+                case 4:
+                    MensajesService.borrarMensajes();
+                    break;
+                default:
+                    break;
+            }
         } while (opcion != 5);
-        
         Conexion conexion = new Conexion();
-        try(Connection cnx = conexion.get_connection()) {
+        try ( Connection cnx = conexion.get_connection()) {
         } catch (SQLException e) {
             System.out.println("Error conexion Main: " + e);
         }
