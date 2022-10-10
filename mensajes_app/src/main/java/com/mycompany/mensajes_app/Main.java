@@ -16,8 +16,8 @@ public class Main {
             System.out.println("||-------------------------||");
             System.out.println("||   1.- Crear mensaje     ||");
             System.out.println("||   2.- Listar mensaje    ||");
-            System.out.println("||   3.- Editar mensaje    ||");
-            System.out.println("||   4.- Eliminar mensaje  ||");
+            System.out.println("||   3.- Eliminar mensaje  ||");
+            System.out.println("||   4.- Editar mensaje    ||");
             System.out.println("||   5.- Salir             ||");
             System.out.println("=============================");
             opcion = tc.nextInt();
@@ -29,10 +29,10 @@ public class Main {
                     MensajesService.listarMensajes();
                     break;
                 case 3:
-                    MensajesService.editarMensajes();
+                    MensajesService.borrarMensajes();
                     break;
                 case 4:
-                    MensajesService.borrarMensajes();
+                    MensajesService.editarMensajes();
                     break;
                 default:
                     break;
